@@ -26,4 +26,4 @@ jobs:
       - id: doesnothappen
         if: false
         run: echo wtf just happened
-      - run: echo ${{ steps.doesnothappen.outcome == "skipped" }}
+      - run: echo ${{ steps.doesnothappen.conclusion != "success" }}

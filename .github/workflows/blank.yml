@@ -26,4 +26,4 @@ jobs:
       - id: doesnothappen
         if: false
         run: echo wtf just happened
-      - run: echo ${{ steps.doesnothappen.conclusion != "success" }}
+      - run: echo ${{ fromJSON('["false", "true"]')[steps.doesnothappen.conclusion == 'skipped'] }}
